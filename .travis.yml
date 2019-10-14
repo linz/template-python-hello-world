@@ -1,0 +1,48 @@
+stages:
+  - name: Linter
+  - name: Test
+
+jobs:
+  include:
+  # Build stage matrix hack: Declare the same stage name multiple times to test multiple versions in parallel.
+  # Use a YAML alias to prevent configuration redundancy.
+  # Python 3.6
+  - &linter
+    stage: Linter
+    language: python
+    python:
+      - "3.6"
+    env:
+      - PYTHON_VERSION=$TRAVIS_PYTHON_VERSION
+    install:
+      - python -m pip install --upgrade pip
+      - pip install -r requirements-dev.txt
+    script:
+      - black . --check --diff
+      - isort -rc . --check --diff
+      - pylint salutation.py test_salutation.py
+
+  # Python 3.7
+  - <<: *linter
+    python:
+      - "3.7"
+
+  # Matrix hack with YAML alias again.
+  # Python 3.6
+  - &test
+    stage: Test
+    language: python
+    python:
+      - "3.6"
+    env:
+      - PYTHON_VERSION=$TRAVIS_PYTHON_VERSION
+    install:
+      - python -m pip install --upgrade pip
+      - pip install -r requirements-dev.txt
+    script:
+      - pytest
+
+  # Python 3.7
+  - <<: *test
+    python:
+      - "3.7"
