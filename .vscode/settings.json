@@ -1,0 +1,18 @@
+{
+    "python.formatting.provider": "black",
+    "python.sortImports.args": [
+        "-ns",
+        "__init__.py",
+        "-l",
+        "127",
+        "--multi-line=3",
+        "--use-parentheses",
+        "--trailing-comma",
+        "--force-grid-wrap=0",
+        "--case-sensitive"
+    ],
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.formatting.blackArgs": [
+        "-l 127"
+    ],
+}
