@@ -7,8 +7,6 @@ jobs:
     strategy:
       matrix:
         python: ['3.6', '3.7']
-    env:
-      PLUGIN_NAME: hello
     steps:
       - uses: actions/checkout@v1
       - name: Use Python ${{ matrix.python }}
@@ -35,8 +33,6 @@ jobs:
     strategy:
       matrix:
         python: ['3.6', '3.7']
-    env:
-      PLUGIN_NAME: hello
     steps:
       - uses: actions/checkout@v1
       - name: Use Python ${{ matrix.python }}
