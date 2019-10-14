@@ -1,5 +1,7 @@
 # Hello World
 
+[![Build Status](https://github.com/linz/python-hello-world/workflows/Build/badge.svg)](https://github.com/linz/python-hello-world/actions)
+
 A minimal template for Python development.
 
 ## Structure
@@ -31,6 +33,7 @@ It is possible to configure VSCode to run `isort` every time you save, using the
 The configuration stored here works with `black` - that is to say, `black` will not reformat changes made by `isort` - but it is still unsafe to apply both commands simultaneously.
 
 In VSCode, you can manually trigger import sorting by:
+
 * right clicking anywhere within a file and selecting `Sort Imports`.
 * command palette (`Ctrl + Shift + P`), then `Python Refactor: Sort Imports`.
 * creating a shortcut key for `python.sortImports`
@@ -61,7 +64,7 @@ The first job, `linter`, tests formatting, linting and correct sorting of import
 black . --check --diff
 ```
 
-This command runs the `black` formatter over the Python files in the current directory. The `--check` flag ensures that the command will error out if any changes are required, rather than making changes. `--diff` will show the difference. 
+This command runs the `black` formatter over the Python files in the current directory. The `--check` flag ensures that the command will error out if any changes are required, rather than making changes. `--diff` will show the difference.
 
 `black` will respect the line length configuration stored in `pyproject.toml`.
 
@@ -77,7 +80,7 @@ This command runs the `pylint` checks for errors, bugs, non-conforming code styl
 isort -rc . --check --diff
 ```
 
-This command runs the `isort` import sorter recursively over the Python files in the current directory. The `--check` flag ensures that the command will error out if any changes are required, rather than making changes. `--diff` will show the difference. 
+This command runs the `isort` import sorter recursively over the Python files in the current directory. The `--check` flag ensures that the command will error out if any changes are required, rather than making changes. `--diff` will show the difference.
 
 `isort` will respect the configurations stored in `pyproject.toml`.
 
