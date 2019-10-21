@@ -88,6 +88,12 @@ This configuration contains two jobs, with each containing a build matrix with t
 The first job, `linter`, tests formatting, linting and correct sorting of imports.
 
 ```bash
+gitlint --commits origin/master..
+```
+
+This command runs `gitlint` over all commits that have occured on a branch since it was branched off master to check that commit message titles conform to the conventional commits specification.
+
+```bash
 black . --check --diff
 ```
 
@@ -130,6 +136,26 @@ This configuration contains two jobs, with each containing a build matrix with t
 Travis-CI doesn't support their standard build matrix syntax while also using build stages, but creating two jobs with the same name within a build stage will have the same effect. This leads to a lot of repeated configuration code, so here we use a YAML alias to prevent configuration redundancy.
 
 The actual tests applied are identical to those used in GitHub Actions.
+
+## Automated Dependency Updates
+
+### Dependabot
+
+Dependabot is enabled on this repository. There is no special configuration here, and enabling Dependabot occurs at the GitHub organisation level.
+
+Dependabot checks the dependencies listed in `requirements-dev.txt` daily to check if any new versions of those dependencies have been released. If Dependabot finds a new release, it opens a new Pull Request with a version bump, and attempts to show the changelog for that change. It also provides a compatibility prediction based on all of the Pull Requests that it has opened on other open source repositories and whether continous integration was successful.
+
+Dependabot is owned by GitHub and free for both open source and private repositories.
+
+## Automated Vulnerability Checks
+
+### LGTM
+
+LGTM is enabled on this repository. There is no special configuration here, and enabling LGTM occurs at the GitHub organisation level.
+
+LGTM provides automated code review and security analysis.
+
+LGTM is owned by GitHub and free for open source repositories. It can only be enabled on private repositories by building your own instance of LGTM.
 
 ## Development
 
