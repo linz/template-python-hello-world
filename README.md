@@ -1,16 +1,24 @@
-# Hello World
+![Python Template - Hello World Banner](https://raw.githubusercontent.com/linz/template-python-hello-world/badges/docs/_static/banner.png)
 
-[![Build Status](https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg)](https://github.com/linz/template-python-hello-world/actions)
-[![Code Style](https://img.shields.io/badge/Code%20Style-black-000000.svg)](https://github.com/psf/black)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/linz/template-python-hello-world/blob/master/LICENSE)
+<h2 align="center">A minimal template for Python development</h2>
 
-A minimal template for Python development.
+<p align="center">
+<a href="https://github.com/linz/template-python-hello-world/actions"><img alt="GitHub Actions Status" src="https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg"></a>
+<a href="https://travis-ci.com/linz/template-python-hello-world"><img alt="Travis CI Status" src="https://badgen.net/travis/linz/template-python-hello-world/master?icon=travis&label=Travis&labelColor=2e3a44&color=3dc64b"></a>
+<a href="https://lgtm.com/projects/g/linz/template-python-hello-world/context:python"><img alt="Alerts" src="https://badgen.net/lgtm/alerts/g/linz/template-python-hello-world?icon=lgtm&labelColor=2e3a44&label=Alerts&color=3dc64b"></a>
+<a href="https://dependabot.com"><img alt="Dependabot Status" src="https://badgen.net/dependabot/linz/template-python-hello-world?icon=dependabot&labelColor=2e3a44&color=blue"></a>
+<a href="https://github.com/linz/template-python-hello-world/blob/master/LICENSE"><img alt="License" src="https://badgen.net/github/license/linz/template-python-hello-world?labelColor=2e3a44&label=License"></a>
+<a href="https://conventionalcommits.org"><img alt="Conventional Commits" src="https://badgen.net/badge/Commits/conventional?labelColor=2e3a44&color=EC5772"></a>
+<a href="https://github.com/psf/black"><img alt="Code Style" src="https://badgen.net/badge/Code%20Style/black?labelColor=2e3a44&color=000000"></a>
+</p>
+
+## Why?
+
+This repository exists to show Python formatting, linting and import sorting configurations with continuous integration.
 
 ## Structure
 
 This is a very simple, single Python module. It is not a Python package and does not contain the structure or tooling required for packaging a Python project.
-
-This repository exists to show basic Python formatting, linting and import sorting configurations with continuous integration.
 
 ## Formatting
 
