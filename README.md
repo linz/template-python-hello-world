@@ -51,6 +51,22 @@ Line length needs to be consistently configured for formatting, linting and whil
 * `.pylintrc`
 * `pyproject.toml`
 
+## Commit Messages
+
+Commit messages must conform to [conventional commits](https://www.conventionalcommits.org/):
+
+```
+type(optional-scope): description
+```
+
+where type is one of `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `style`, `test` as specified in `.gitlint`.
+
+For example:
+
+```
+ci(github-actions): add new matrix jobs for Python 3.8
+```
+
 ## Continuous Integration
 
 ### GitHub Actions
@@ -118,8 +134,15 @@ source .venv/bin/activate
 
 `python3` must be 3.6+
 
-Install the required dependencies.
+Upgrade pip and install the required dependencies.
 
 ```bash
+pip install --upgrade pip
 pip install -r requirements-dev.txt
+```
+
+Install commit-msg git hook.
+
+```bash
+pre-commit install --hook-type commit-msg
 ```

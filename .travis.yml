@@ -17,7 +17,11 @@ jobs:
     install:
       - python -m pip install --upgrade pip
       - pip install -r requirements-dev.txt
+    before_script:
+      # Travis-CI does not include master in the build by default
+      - git fetch origin refs/heads/master:refs/heads/master
     script:
+      - gitlint --commits master..
       - black . --check --diff
       - isort -rc . --check --diff
       - pylint salutation.py test_salutation.py
