@@ -1,16 +1,14 @@
 ![Python Template - Hello World Banner](https://raw.githubusercontent.com/linz/template-python-hello-world/badges/docs/_static/banner.png)
 
-<h2 align="center">A minimal template for Python development</h2>
+### _A minimal template for Python development_
 
-<p align="center">
-<a href="https://github.com/linz/template-python-hello-world/actions"><img alt="GitHub Actions Status" src="https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg"></a>
-<a href="https://travis-ci.com/linz/template-python-hello-world"><img alt="Travis CI Status" src="https://badgen.net/travis/linz/template-python-hello-world/master?icon=travis&label=Travis&labelColor=2e3a44&color=3dc64b"></a>
-<a href="https://lgtm.com/projects/g/linz/template-python-hello-world/context:python"><img alt="Alerts" src="https://badgen.net/lgtm/alerts/g/linz/template-python-hello-world?icon=lgtm&labelColor=2e3a44&label=Alerts&color=3dc64b"></a>
-<a href="https://dependabot.com"><img alt="Dependabot Status" src="https://badgen.net/dependabot/linz/template-python-hello-world?icon=dependabot&labelColor=2e3a44&color=blue"></a>
-<a href="https://github.com/linz/template-python-hello-world/blob/master/LICENSE"><img alt="License" src="https://badgen.net/github/license/linz/template-python-hello-world?labelColor=2e3a44&label=License"></a>
-<a href="https://conventionalcommits.org"><img alt="Conventional Commits" src="https://badgen.net/badge/Commits/conventional?labelColor=2e3a44&color=EC5772"></a>
-<a href="https://github.com/psf/black"><img alt="Code Style" src="https://badgen.net/badge/Code%20Style/black?labelColor=2e3a44&color=000000"></a>
-</p>
+[![GitHub Actions Status](https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg)](https://github.com/linz/template-python-hello-world/actions)
+[![Travis CI Status](https://badgen.net/travis/linz/template-python-hello-world/master?icon=travis&label=Travis&labelColor=2e3a44&color=3dc64b)](https://travis-ci.com/linz/template-python-hello-world)
+[![Alerts](https://badgen.net/lgtm/alerts/g/linz/template-python-hello-world?icon=lgtm&labelColor=2e3a44&label=Alerts&color=3dc64b)](https://lgtm.com/projects/g/linz/template-python-hello-world/context:python)
+[![Dependabot Status](https://badgen.net/dependabot/linz/template-python-hello-world?icon=dependabot&labelColor=2e3a44&color=blue)](https://dependabot.com)
+[![License](https://badgen.net/github/license/linz/template-python-hello-world?labelColor=2e3a44&label=License)](https://github.com/linz/template-python-hello-world/blob/master/LICENSE)
+[![Conventional Commits](https://badgen.net/badge/Commits/conventional?labelColor=2e3a44&color=EC5772)](https://conventionalcommits.org)
+[![Code Style](https://badgen.net/badge/Code%20Style/black?labelColor=2e3a44&color=000000)](https://github.com/psf/black)
 
 ## Why?
 
