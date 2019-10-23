@@ -1,16 +1,22 @@
-# Hello World
+![Python Template - Hello World Banner](https://raw.githubusercontent.com/linz/template-python-hello-world/badges/docs/_static/banner.png)
 
-[![Build Status](https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg)](https://github.com/linz/template-python-hello-world/actions)
-[![Code Style](https://img.shields.io/badge/Code%20Style-black-000000.svg)](https://github.com/psf/black)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/linz/template-python-hello-world/blob/master/LICENSE)
+### _A minimal template for Python development_
 
-A minimal template for Python development.
+[![GitHub Actions Status](https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg)](https://github.com/linz/template-python-hello-world/actions)
+[![Travis CI Status](https://badgen.net/travis/linz/template-python-hello-world/master?icon=travis&label=Travis&labelColor=2e3a44&color=3dc64b)](https://travis-ci.com/linz/template-python-hello-world)
+[![Alerts](https://badgen.net/lgtm/alerts/g/linz/template-python-hello-world?icon=lgtm&labelColor=2e3a44&label=Alerts&color=3dc64b)](https://lgtm.com/projects/g/linz/template-python-hello-world/context:python)
+[![Dependabot Status](https://badgen.net/dependabot/linz/template-python-hello-world?icon=dependabot&labelColor=2e3a44&color=blue)](https://dependabot.com)
+[![License](https://badgen.net/github/license/linz/template-python-hello-world?labelColor=2e3a44&label=License)](https://github.com/linz/template-python-hello-world/blob/master/LICENSE)
+[![Conventional Commits](https://badgen.net/badge/Commits/conventional?labelColor=2e3a44&color=EC5772)](https://conventionalcommits.org)
+[![Code Style](https://badgen.net/badge/Code%20Style/black?labelColor=2e3a44&color=000000)](https://github.com/psf/black)
+
+## Why?
+
+This repository exists to show Python formatting, linting and import sorting configurations with continuous integration.
 
 ## Structure
 
 This is a very simple, single Python module. It is not a Python package and does not contain the structure or tooling required for packaging a Python project.
-
-This repository exists to show basic Python formatting, linting and import sorting configurations with continuous integration.
 
 ## Formatting
 
@@ -80,6 +86,12 @@ This configuration contains two jobs, with each containing a build matrix with t
 The first job, `linter`, tests formatting, linting and correct sorting of imports.
 
 ```bash
+gitlint --commits origin/master..
+```
+
+This command runs `gitlint` over all commits that have occured on a branch since it was branched off master to check that commit message titles conform to the conventional commits specification.
+
+```bash
 black . --check --diff
 ```
 
@@ -122,6 +134,26 @@ This configuration contains two jobs, with each containing a build matrix with t
 Travis-CI doesn't support their standard build matrix syntax while also using build stages, but creating two jobs with the same name within a build stage will have the same effect. This leads to a lot of repeated configuration code, so here we use a YAML alias to prevent configuration redundancy.
 
 The actual tests applied are identical to those used in GitHub Actions.
+
+## Automated Dependency Updates
+
+### Dependabot
+
+Dependabot is enabled on this repository. There is no special configuration here, and enabling Dependabot occurs at the GitHub organisation level.
+
+Dependabot checks the dependencies listed in `requirements-dev.txt` daily to check if any new versions of those dependencies have been released. If Dependabot finds a new release, it opens a new Pull Request with a version bump, and attempts to show the changelog for that change. It also provides a compatibility prediction based on all of the Pull Requests that it has opened on other open source repositories and whether continous integration was successful.
+
+Dependabot is owned by GitHub and free for both open source and private repositories.
+
+## Automated Vulnerability Checks
+
+### LGTM
+
+LGTM is enabled on this repository. There is no special configuration here, and enabling LGTM occurs at the GitHub organisation level.
+
+LGTM provides automated code review and security analysis.
+
+LGTM is owned by GitHub and free for open source repositories. It can only be enabled on private repositories by building your own instance of LGTM.
 
 ## Development
 
