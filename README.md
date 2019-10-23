@@ -1,4 +1,4 @@
-![Python Template - Hello World Banner](https://raw.githubusercontent.com/linz/template-python-hello-world/badges/docs/_static/banner.png)
+![Python Template - Hello World Banner](https://raw.githubusercontent.com/linz/template-python-hello-world/master/docs/_static/banner.png)
 
 ### _A minimal template for Python development_
 
