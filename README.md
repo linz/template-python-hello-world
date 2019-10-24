@@ -12,27 +12,49 @@
 
 ## Why?
 
-This repository exists to show Python formatting, linting and import sorting configurations with continuous integration.
+This repository exists to show a working example of Python formatting, linting and import sorting configurations with continuous integration.
 
 ## Structure
 
-This is a very simple, single Python module. It is not a Python package and does not contain the structure or tooling required for packaging a Python project.
+This is a very simple, single Python module. It is not a Python package and does not contain the structure or tooling required for packaging / installing a Python project.
 
 ## Formatting
 
 Formatting is handled by `black`.
 
-The configuration is stored in `pyproject.toml`.
+Black is an uncompromising Python code formatting tool. It takes a Python file as an input, and provides a reformatted Python file as an output, using rules that are a strict subset of [PEP 8](https://www.python.org/dev/peps/pep-0008/). It offers very little in the way of configuration (line length being the main exception) in order to achieve formatting consistency. It is deterministic - it will always produce the same output from the same inputs.
+
+The line length configuration is stored in `pyproject.toml`.
+
+Configuring Black to automatically run every time code is modified allows developers to forget about _how_ code should be formatted and stay focused on functionality. Many IDEs and text editors allow this. Git hooks can also be used to execute Black before Python code is committed to a repository - this is not configured here as use of autosave and continuous integration checks makes it redundant.
+
+### VSCode Configuration
+
+In VSCode, you can set the default Python formatter using the setting: `"python.formatting.provider": "black"`, and then turn on autosave using `"editor.formatOnSave": true`. VSCode will pick up the line length configuration from a `pyproject.toml` file per repository.
 
 ## Linting
 
 Linting is handled by `pylint`.
 
+Pylint checks Python files in order to detect syntax errors and potential bugs (unreachable code / unused variables), provide refactoring help, 
+
 The configuration is stored in `.pylintrc`.
+
+### VSCode Configuration
+
+Pylint is enabled by default in VSCode. VSCode will respect Pylint configurations stored in a `.pylintrc` file per repository. 
 
 ## Sorting Imports
 
 Import sorting is handled by `isort`.
+
+isort sorts Python imports alphabetically within their respective sections:
+
+1. Standard library imports
+2. Related third party imports
+3. Local application / library specific imports
+
+isort has many configuration options but these can cause inconsistencies with Black, so must be carefully assessed. The configurations within this repository will provide consistently ordered / formatted imports.
 
 The configuration is stored in `pyproject.toml`.
 
