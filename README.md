@@ -87,7 +87,7 @@ Commit messages must conform to [conventional commits](https://www.conventionalc
 type(optional-scope): description
 ```
 
-where type is one of `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `style`, `test` as specified in `.gitlint`.
+where type is one of `build`, `chore`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `revert`, `style`, `test` as specified in `.gitlint`.
 
 For example:
 

@@ -18,4 +18,4 @@ line-length=72
 
 [contrib-title-conventional-commits]
 # Specify allowed commit types. For details see: https://www.conventionalcommits.org/
-types = build, ci, docs, feat, fix, perf, refactor, style, test
+types = build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test
