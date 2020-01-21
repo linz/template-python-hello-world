@@ -1,0 +1,169 @@
+name: Pull Request labelling
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - review_requested
+      - review_request_removed
+      - submitted
+      - dismissed
+
+jobs:
+  pr_labelling:
+    runs-on: ubuntu-latest
+    name: Pull Request labelling
+    steps:
+
+      - name: Get a list of all labels on this PR
+        id: get_label_list
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: GET /repos/:repo/issues/:issue_number/labels
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+
+      - name: Get review requests
+        id: get_review_requests
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: GET /repos/:repo/pulls/:pull_number/requested_reviewers
+          repo: ${{ github.repository }}
+          pull_number: ${{ github.event.pull_request.number }}
+
+      - name: Get reviews (if there are no review requests)
+        id: get_reviews
+        if: steps.get_review_requests.outputs.data.users.length == 0 && steps.get_review_requests.outputs.data.teams.length == 0
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: GET /repos/:repo/pulls/:pull_number/reviews
+          repo: ${{ github.repository }}
+          pull_number: ${{ github.event.pull_request.number }}
+
+      - name: Add a "review requested" label (if there is a review request)
+        id: label_review_request
+        if: steps.get_review_requests.outputs.data.users.length > 0 || steps.get_review_requests.outputs.data.teams.length > 0
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/:repo/issues/:issue_number/labels
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          labels: '["review requested"]'
+
+      - name: Remove "no reviewer" label (if there is a review request and it still exists)
+        id: remove_review_request
+        if: (steps.get_review_requests.outputs.data.users.length > 0 || steps.get_review_requests.outputs.data.teams.length > 0) && contains(steps.get_label_list.outputs.data, 'no reviewer')
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: DELETE /repos/:repo/issues/:issue_number/labels/:name
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          name: "no reviewer"
+
+      - name: Add "no reviewer" label (if there are no reviews)
+        id: label_no_reviewer
+        if: steps.get_reviews.outputs.data.length == 0
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/:repo/issues/:issue_number/labels
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          labels: '["no reviewer"]'
+
+      - name: Remove "no reviewer" label (if there are reviews and it exists)
+        id: remove_no_reviewer
+        if: steps.get_reviews.outputs.data.length > 0 && contains(steps.get_label_list.outputs.data, 'no reviewer')
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: DELETE /repos/:repo/issues/:issue_number/labels/:name
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          name: "no reviewer"
+
+      - name: Add a "review requested" label (if there are pending reviews)
+        id: label_review_requested
+        if: steps.get_reviews.outputs.data.length > 0 && contains(steps.get_reviews.outputs.data.reviews.*.state, 'PENDING')
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/:repo/issues/:issue_number/labels
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          labels: '["review requested"]'
+
+      - name: Remove "review requested" label (if there are no pending reviews and it exists)
+        id: remove_review_requested
+        if: "!contains(steps.get_reviews.outputs.data.reviews.*.state, 'PENDING') && contains(steps.get_label_list.outputs.data, 'review requested')"
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: DELETE /repos/:repo/issues/:issue_number/labels/:name
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          name: "review requested"
+
+      - name: Add a "changes requested" label (if there are reviews requesting changes)
+        id: label_changes_requested
+        if: steps.get_reviews.outputs.data.length > 0 && contains(steps.get_reviews.outputs.data.reviews.*.state, 'CHANGES_REQUESTED')
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/:repo/issues/:issue_number/labels
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          labels: '["changes requested"]'
+
+      - name: Remove "changes requested" label (if there are no reviews requesting changes and it exists)
+        id: remove_changes_requested
+        if: "!contains(steps.get_reviews.outputs.data.reviews.*.state, 'CHANGES_REQUESTED') && contains(steps.get_label_list.outputs.data, 'changes requested')"
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: DELETE /repos/:repo/issues/:issue_number/labels/:name
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          name: "changes requested"
+
+      - name: Add a "changes approved" label (if there are reviews requesting changes)
+        id: label_changes_approved
+        if: steps.get_reviews.outputs.data.length > 0 && contains(steps.get_reviews.outputs.data.reviews.*.state, 'APPROVED')
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/:repo/issues/:issue_number/labels
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          labels: '["changes approved"]'
+
+      - name: Remove "changes approved" label (if there are no reviews requesting changes and it exists)
+        id: remove_changes_approved
+        if: "!contains(steps.get_reviews.outputs.data.reviews.*.state, 'APPROVED') && contains(steps.get_label_list.outputs.data, 'changes requested')"
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: DELETE /repos/:repo/issues/:issue_number/labels/:name
+          repo: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+          name: "changes approved"
