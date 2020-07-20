@@ -36,13 +36,13 @@ In VSCode, you can set the default Python formatter using the setting: `"python.
 
 Linting is handled by `pylint`.
 
-Pylint checks Python files in order to detect syntax errors and potential bugs (unreachable code / unused variables), provide refactoring help, 
+Pylint checks Python files in order to detect syntax errors and potential bugs (unreachable code / unused variables), provide refactoring help,
 
 The configuration is stored in `.pylintrc`.
 
 ### VSCode Configuration
 
-Pylint is enabled by default in VSCode. VSCode will respect Pylint configurations stored in a `.pylintrc` file per repository. 
+Pylint is enabled by default in VSCode. VSCode will respect Pylint configurations stored in a `.pylintrc` file per repository.
 
 ## Sorting Imports
 
@@ -66,9 +66,9 @@ The configuration stored here works with `black` - that is to say, `black` will 
 
 In VSCode, you can manually trigger import sorting by:
 
-* right clicking anywhere within a file and selecting `Sort Imports`.
-* command palette (`Ctrl + Shift + P`), then `Python Refactor: Sort Imports`.
-* creating a shortcut key for `python.sortImports`
+- right clicking anywhere within a file and selecting `Sort Imports`.
+- command palette (`Ctrl + Shift + P`), then `Python Refactor: Sort Imports`.
+- creating a shortcut key for `python.sortImports`
 
 There is also some discussion over [whether black should just handle import sorting itself](https://github.com/psf/black/issues/333).
 
@@ -76,8 +76,8 @@ There is also some discussion over [whether black should just handle import sort
 
 Line length needs to be consistently configured for formatting, linting and while sorting imports. In order to change the line length for a specific project, it will need to be updated in the following locations:
 
-* `.pylintrc`
-* `pyproject.toml`
+- `.pylintrc`
+- `pyproject.toml`
 
 ## Commit Messages
 
@@ -108,10 +108,16 @@ This configuration contains two jobs, with each containing a build matrix with t
 The first job, `linter`, tests formatting, linting and correct sorting of imports.
 
 ```bash
-gitlint --commits origin/master..
+gitlint
 ```
 
-This command runs `gitlint` over all commits that have occured on a branch since it was branched off master to check that commit message titles conform to the conventional commits specification.
+This command runs `gitlint` on the **most recent commit**, to check that commit message titles conform to the conventional commits specification. Earlier commits may not conform, but all commits that are included in a Pull Request are checked by the next command. Pull Requests are the recommended code review workflow before merging into master.
+
+```bash
+gitlint --commits origin/${{ github.base_ref }}..${{ github.event.pull_request.head.sha }}
+```
+
+This command runs `gitlint` over **all commits** in a Pull Request, to check that commit message titles conform to the conventional commits specification.
 
 ```bash
 black . --check --diff
