@@ -16,6 +16,8 @@ This repository exists to show a working example of Python formatting, linting a
 
 Blah
 
+Blah
+
 ## Structure
 
 This is a very simple, single Python module. It is not a Python package and does not contain the structure or tooling required for packaging / installing a Python project.
