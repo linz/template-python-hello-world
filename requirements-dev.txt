@@ -2,5 +2,5 @@ black==19.10b0
 gitlint==0.13.1
 isort==4.3.21
 pre-commit==2.6.0
-pylint==2.5.3
+pylint==2.6.0
 pytest==6.0.1
