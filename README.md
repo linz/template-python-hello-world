@@ -3,7 +3,6 @@
 ### _A minimal template for Python development_
 
 [![GitHub Actions Status](https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg)](https://github.com/linz/template-python-hello-world/actions)
-[![Travis CI Status](https://badgen.net/travis/linz/template-python-hello-world/master?icon=travis&label=Travis&labelColor=2e3a44&color=3dc64b)](https://travis-ci.com/linz/template-python-hello-world)
 [![Alerts](https://badgen.net/lgtm/alerts/g/linz/template-python-hello-world?icon=lgtm&labelColor=2e3a44&label=Alerts&color=3dc64b)](https://lgtm.com/projects/g/linz/template-python-hello-world/context:python)
 [![Dependabot Status](https://badgen.net/dependabot/linz/template-python-hello-world?icon=dependabot&labelColor=2e3a44&color=blue)](https://dependabot.com)
 [![License](https://badgen.net/github/license/linz/template-python-hello-world?labelColor=2e3a44&label=License)](https://github.com/linz/template-python-hello-world/blob/master/LICENSE)
@@ -152,16 +151,6 @@ pytest
 ```
 
 Simply execute `pytest` and it will [find things that look like tests](http://doc.pytest.org/en/latest/goodpractices.html#conventions-for-python-test-discovery) and run them.
-
-### Travis-CI
-
-The Travis-CI configuration is stored in `.travis.yml`.
-
-This configuration contains two jobs, with each containing a build matrix with two different versions of Python. The second job depends on the first job being completed successfully by using "build stages".
-
-Travis-CI doesn't support their standard build matrix syntax while also using build stages, but creating two jobs with the same name within a build stage will have the same effect. This leads to a lot of repeated configuration code, so here we use a YAML alias to prevent configuration redundancy.
-
-The actual tests applied are identical to those used in GitHub Actions.
 
 ## Automated Dependency Updates
 
