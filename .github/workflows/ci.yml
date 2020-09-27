@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Use Python ${{ matrix.python }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2.1.2
         with:
           python-version: ${{ matrix.python }}
       - name: Install
@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Use Python ${{ matrix.python }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2.1.2
         with:
           python-version: ${{ matrix.python }}
       - name: Install
