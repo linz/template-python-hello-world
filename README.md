@@ -199,7 +199,7 @@ pip install --upgrade pip
 pip install -r requirements-dev.txt
 ```
 
-Install commit-msg git hook.
+Install commit-msg git hook. It runs on every local commit to check if the commit message conforms to the convention specified in `.gitlint`
 
 ```bash
 pre-commit install --hook-type commit-msg
