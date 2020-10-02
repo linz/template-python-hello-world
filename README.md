@@ -136,7 +136,7 @@ This command runs the `pylint` checks for errors, bugs, non-conforming code styl
 `pylint` uses the configurations stored in `.pylintrc`.
 
 ```bash
-isort -rc . --check --diff
+isort . --check --diff
 ```
 
 This command runs the `isort` import sorter recursively over the Python files in the current directory. The `--check` flag ensures that the command will error out if any changes are required, rather than making changes. `--diff` will show the difference.
