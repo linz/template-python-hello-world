@@ -37,7 +37,7 @@ jobs:
           pylint salutation.py test_salutation.py
       - name: Import Sorting
         run: |
-          isort -rc . --check --diff
+          isort . --check --diff
       - name: Test
         run: |
           pytest
