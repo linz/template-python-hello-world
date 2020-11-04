@@ -8,3 +8,25 @@ use_parentheses = true
 include_trailing_comma = true
 multi_line_output = 3
 force_grid_wrap = 0
+
+[tool.poetry]
+name = "template-python-hello-world"
+version = "0.1.0"
+description = "Human-readable description"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+black = "*"
+gitlint = "*"
+isort = "*"
+pre-commit = "*"
+pylint = "*"
+pytest = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -183,20 +183,15 @@ LGTM is owned by GitHub and free for open source repositories. It can only be en
 
 ## Development
 
-Create and activate a virtual environment.
+Prerequisites:
+
+- Python 3.6+
+- [Poetry](https://python-poetry.org/docs/#installation)
+
+Install the project dependencies:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-`python3` must be 3.6+
-
-Upgrade pip and install the required dependencies.
-
-```bash
-pip install --upgrade pip
-pip install -r requirements-dev.txt
+poetry install
 ```
 
 Install commit-msg git hook. It runs on every local commit to check if the commit message conforms to the convention specified in `.gitlint`
