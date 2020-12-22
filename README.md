@@ -198,4 +198,5 @@ Install commit-msg git hook. It runs on every local commit to check if the commi
 
 ```bash
 pre-commit install --hook-type commit-msg --overwrite
+pre-commit install --hook-type=pre-commit --overwrite
 ```

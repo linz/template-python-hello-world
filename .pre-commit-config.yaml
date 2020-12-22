@@ -2,9 +2,11 @@
 # Please run `pre-commit run --all-files` when adding or changing entries.
 
 repos:
--  repo: https://github.com/jorisroovers/gitlint
-   rev: v0.12.0
-   hooks:
-   -  id: gitlint
-      stages: [commit-msg]
-
+    - repo: local
+      hooks:
+          - id: gitlint
+            name: gitlint
+            entry: gitlint
+            args: [--msg-filename]
+            language: system
+            stages: [commit-msg]
