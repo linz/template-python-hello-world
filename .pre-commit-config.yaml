@@ -1,4 +1,5 @@
 # Configuration file for pre-commit (https://pre-commit.com/)
+# Please run `pre-commit run --all-files` when adding or changing entries.
 
 repos:
 -  repo: https://github.com/jorisroovers/gitlint
