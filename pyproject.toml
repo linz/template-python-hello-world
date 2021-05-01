@@ -12,8 +12,14 @@ force_grid_wrap = 0
 [tool.poetry]
 name = "template-python-hello-world"
 version = "0.1.0"
-description = "Human-readable description"
-authors = ["Your Name <you@example.com>"]
+description = "A minimal template for Python development"
+authors = [
+    "Ben Cheng <42329567+Ben-Cheng@users.noreply.github.com>",
+    "Blayne Chard <bchard@linz.govt.nz>",
+    "Daniel Silk <dsilk@linz.govt.nz>",
+    "Victor Engmark <vengmark@linz.govt.nz>",
+
+]
 license = "MIT"
 
 [tool.poetry.dependencies]
