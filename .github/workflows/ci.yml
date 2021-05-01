@@ -35,4 +35,7 @@ jobs:
           poetry run pre-commit run --all-files
       - name: Test
         run: |
-          poetry run pytest
+          poetry run coverage run --module pytest
+      - name: Verify test coverage
+        run: |
+          poetry run coverage report
