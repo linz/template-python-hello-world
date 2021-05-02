@@ -2,7 +2,7 @@
 Tests for the hello() function.
 """
 
-from salutation import hello
+from module_name.salutation import hello
 
 
 def test_hello_without_name() -> None:

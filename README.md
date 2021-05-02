@@ -145,7 +145,7 @@ This command runs the `isort` import sorter recursively over the Python files in
 
 #### Test
 
-The second job, `test`, runs tests using `pytest`.
+The second job, `test`, runs tests using `pytest` and verifies test coverage.
 
 ```bash
 pytest

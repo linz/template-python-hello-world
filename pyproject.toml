@@ -1,6 +1,15 @@
 [tool.black]
 line-length = 127
 
+[tool.coverage.run]
+source = [
+    "module_name",
+    "tests",
+]
+
+[tool.coverage.report]
+fail_under = 100
+
 [tool.isort]
 line_length = 127
 case_sensitive = true
@@ -27,6 +36,7 @@ python = "^3.6"
 
 [tool.poetry.dev-dependencies]
 black = "*"
+coverage = "*"
 gitlint = "*"
 isort = "*"
 mypy = "*"
