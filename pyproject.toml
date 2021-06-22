@@ -2,6 +2,7 @@
 line-length = 127
 
 [tool.coverage.run]
+branch = true
 source = [
     "module_name",
     "tests",
