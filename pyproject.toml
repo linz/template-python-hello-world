@@ -11,6 +11,9 @@ source = [
 [tool.coverage.report]
 fail_under = 100
 
+[tool.mypy]
+strict = true
+
 [tool.isort]
 line_length = 127
 case_sensitive = true
