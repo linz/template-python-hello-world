@@ -12,6 +12,7 @@ source = [
 fail_under = 100
 
 [tool.mypy]
+show_error_codes = true
 strict = true
 
 [tool.isort]
