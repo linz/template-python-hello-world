@@ -1,5 +1,12 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.black]
 line-length = 127
+
+[tool.coverage.report]
+fail_under = 100
 
 [tool.coverage.run]
 branch = true
@@ -7,9 +14,6 @@ source = [
     "module_name",
     "tests",
 ]
-
-[tool.coverage.report]
-fail_under = 100
 
 [tool.isort]
 line_length = 127
@@ -40,11 +44,8 @@ black = "*"
 coverage = "*"
 gitlint = "*"
 isort = "*"
+language-formatters-pre-commit-hooks = "*"
 mypy = "*"
 pre-commit = "*"
 pylint = "*"
 pytest = "*"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
