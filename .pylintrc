@@ -2,7 +2,3 @@
 disable =
         bad-continuation,
         invalid-name
-[FORMAT]
-max-line-length=127
-[MISCELLANEOUS]
-notes=FIXME,XXX
