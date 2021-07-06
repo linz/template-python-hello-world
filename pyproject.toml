@@ -23,6 +23,10 @@ include_trailing_comma = true
 multi_line_output = 3
 force_grid_wrap = 0
 
+[tool.mypy]
+show_error_codes = true
+strict = true
+
 [tool.poetry]
 name = "template-python-hello-world"
 version = "0.1.0"
