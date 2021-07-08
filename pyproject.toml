@@ -53,3 +53,9 @@ mypy = "*"
 pre-commit = "*"
 pylint = "*"
 pytest = "*"
+
+[tool.pylint.MASTER]
+disable = [
+    "bad-continuation",
+    "invalid-name",
+]
