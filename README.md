@@ -190,7 +190,7 @@ LGTM is owned by GitHub and free for open source repositories. It can only be en
 
 Prerequisites:
 
-- Python 3.6+
+- Python 3.9+ (this can be changed in `pyproject.toml` and `.github/workflows/ci.yml`)
 - [Poetry](https://python-poetry.org/docs/#installation)
 
 Install the project dependencies:
