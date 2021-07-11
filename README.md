@@ -43,11 +43,11 @@ Linting is handled by `pylint`.
 
 Pylint checks Python files in order to detect syntax errors and potential bugs (unreachable code / unused variables), provide refactoring help,
 
-The configuration is stored in `.pylintrc`.
+The configuration is stored in `pyproject.toml`.
 
 ### VSCode Configuration
 
-Pylint is enabled by default in VSCode. VSCode will respect Pylint configurations stored in a `.pylintrc` file per repository.
+Pylint is enabled by default in VSCode. VSCode will respect Pylint configurations stored in a `pyproject.toml` file per repository.
 
 ## Sorting Imports
 
@@ -79,10 +79,7 @@ There is also some discussion over [whether black should just handle import sort
 
 ## Line Length
 
-Line length needs to be consistently configured for formatting, linting and while sorting imports. In order to change the line length for a specific project, it will need to be updated in the following locations:
-
-- `.pylintrc`
-- `pyproject.toml`
+Line length needs to be consistently configured for formatting, linting and while sorting imports. In order to change the line length for a specific project, it will need to be updated in `pyproject.toml`.
 
 ## Commit Messages
 
@@ -138,7 +135,7 @@ pylint salutation.py test_salutation.py
 
 This command runs the `pylint` checks for errors, bugs, non-conforming code style and potential code structure improvements over our Python module and tests.
 
-`pylint` uses the configurations stored in `.pylintrc`.
+`pylint` uses the configurations stored in `pyproject.toml`.
 
 ```bash
 isort -rc . --check --diff
@@ -190,7 +187,7 @@ LGTM is owned by GitHub and free for open source repositories. It can only be en
 
 Prerequisites:
 
-- Python 3.6+
+- Python 3.9+ (this can be changed in `pyproject.toml` and `.github/workflows/ci.yml`)
 - [Poetry](https://python-poetry.org/docs/#installation)
 
 Install the project dependencies:

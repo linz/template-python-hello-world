@@ -17,10 +17,7 @@ omit = [
 [tool.isort]
 line_length = 127
 case_sensitive = true
-use_parentheses = true
-include_trailing_comma = true
-multi_line_output = 3
-force_grid_wrap = 0
+profile = "black"
 
 [tool.mypy]
 show_error_codes = true
@@ -40,7 +37,7 @@ authors = [
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.9"
 
 [tool.poetry.dev-dependencies]
 black = "*"
@@ -52,3 +49,15 @@ mypy = "*"
 pre-commit = "*"
 pylint = "*"
 pytest = "*"
+
+[tool.pylint.FORMAT]
+max-line-length = 127
+
+[tool.pylint.MASTER]
+disable = [
+    "bad-continuation",
+    "duplicate-code",
+    "invalid-name",
+    "missing-docstring",
+    "too-few-public-methods",
+]
