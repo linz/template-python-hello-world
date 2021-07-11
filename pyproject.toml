@@ -50,3 +50,15 @@ mypy = "*"
 pre-commit = "*"
 pylint = "*"
 pytest = "*"
+
+[tool.pylint.FORMAT]
+max-line-length = 127
+
+[tool.pylint.MASTER]
+disable = [
+    "bad-continuation",
+    "duplicate-code",
+    "invalid-name",
+    "missing-docstring",
+    "too-few-public-methods",
+]
