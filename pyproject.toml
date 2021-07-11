@@ -18,10 +18,7 @@ source = [
 [tool.isort]
 line_length = 127
 case_sensitive = true
-use_parentheses = true
-include_trailing_comma = true
-multi_line_output = 3
-force_grid_wrap = 0
+profile = "black"
 
 [tool.mypy]
 show_error_codes = true
