@@ -155,6 +155,12 @@ pytest
 
 Simply execute `pytest` and it will [find things that look like tests](http://doc.pytest.org/en/latest/goodpractices.html#conventions-for-python-test-discovery) and run them.
 
+Tests run in a random order thanks to [pytest-randomly](https://pypi.org/project/pytest-randomly/). This helps to detect interdependencies between tests. A test sequence can be reproduced by using the same `--randomly-seed=VALUE` option. `pytest` will always print this value, for example:
+
+> Using --randomly-seed=1548714831
+
+This randomness can also be used to generate fuzzing input.
+
 ## Automated Pull Request Merging
 
 ### Kodiak
