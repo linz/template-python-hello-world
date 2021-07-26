@@ -3,7 +3,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-line-length = 127
+line-length = 88
 
 [tool.coverage.report]
 fail_under = 100
@@ -15,7 +15,7 @@ omit = [
 ]
 
 [tool.isort]
-line_length = 127
+line_length = 88
 case_sensitive = true
 profile = "black"
 
@@ -52,7 +52,7 @@ pytest = "*"
 pytest-randomly = "*"
 
 [tool.pylint.FORMAT]
-max-line-length = 127
+max-line-length = 88
 
 [tool.pylint.MASTER]
 disable = [
