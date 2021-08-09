@@ -194,17 +194,55 @@ LGTM is owned by GitHub and free for open source repositories. It can only be en
 Prerequisites:
 
 - Python 3.9+ (this can be changed in `.python-version` and `pyproject.toml`)
+
+  1. Install Python build environment:
+
+     ```bash
+     sudo apt-get update
+     sudo apt-get install --no-install-recommends build-essential curl libbz2-dev libffi-dev liblzma-dev libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev libxml2-dev libxmlsec1-dev llvm make tk-dev wget xz-utils zlib1g-dev
+     ```
+
 - [Poetry](https://python-poetry.org/docs/#installation)
+
+  1. Install:
+
+     ```bash
+     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python3 -
+     ```
+
+  2. Make sure `"${HOME}/.local/bin"` is on your `PATH`, for example by adding the following to
+     your `~/.bashrc`:
+
+     ```bash
+     if [[ -e "${HOME}/.local/bin" ]]
+     then
+         PATH="${HOME}/.local/bin:${PATH}"
+     fi
+     ```
+
+  3. Restart your shell: `exec "$SHELL"`.
+  4. Verify setup: `poetry --version`.
 
 Optional dependencies:
 
-- [Pyenv](https://github.com/pyenv/pyenv) to use the reference Python version in `pyproject.toml` with a simple `pyenv install`
+- [Pyenv](https://github.com/pyenv/pyenv#installation) to use the reference Python version in `pyproject.toml` with a simple `pyenv install`
 
-Install the project dependencies:
+  1. `curl https://pyenv.run | bash`
+  2. Add the following to ~/.bashrc (wraps the upstream instructions to not do anything if `pyenv`
+     is not installed):
 
-```bash
-poetry install
-```
+     ```bash
+     # Pyenv <https://github.com/pyenv/pyenv>
+     if [[ -e "${HOME}/.pyenv" ]]
+     then
+         PATH="${HOME}/.pyenv/bin:${PATH}"
+         eval "$(pyenv init --path)"
+         eval "$(pyenv init -)"
+         eval "$(pyenv virtualenv-init -)"
+     fi
+     ```
+
+  3. Restart your shell: `exec "$SHELL"`.
 
 Install commit-msg git hook. It runs on every local commit to check if the commit message conforms to the convention specified in `.gitlint`
 
