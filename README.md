@@ -209,6 +209,5 @@ poetry install
 Install commit-msg git hook. It runs on every local commit to check if the commit message conforms to the convention specified in `.gitlint`
 
 ```bash
-pre-commit install --hook-type commit-msg --overwrite
-pre-commit install --hook-type=pre-commit --overwrite
+pre-commit install --hook-type=commit-msg --hook-type=pre-commit --overwrite
 ```
