@@ -37,7 +37,7 @@ authors = [
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.6"
 
 [tool.poetry.dev-dependencies]
 black = "*"
@@ -50,6 +50,7 @@ pre-commit = "*"
 pylint = "*"
 pytest = "*"
 pytest-randomly = "*"
+typed-ast = "*"
 
 [tool.pylint.FORMAT]
 max-line-length = 127

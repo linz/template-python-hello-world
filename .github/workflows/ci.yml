@@ -8,18 +8,26 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
+        python: [3.6, 3.7, 3.8, 3.9]
+        experimental: [false]
+        include:
+          - os: ubuntu-latest
+            python: "3.10.0-rc.1"
+            experimental: true
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2.3.4
         with:
           fetch-depth: 0
-      - name: Get configuration
-        run: |
-          echo "PYTHON_VERSION=$(cat .python-version)" | tee -a $GITHUB_ENV
-      - name: Setup Python ${{ env.PYTHON_VERSION }}
+      - name: Setup Python ${{ matrix.python }}
         uses: actions/setup-python@v2.2.2
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: ${{ matrix.python }}
       - uses: actions/cache@v2.1.6
         with:
           path: ~/.cache/pip
