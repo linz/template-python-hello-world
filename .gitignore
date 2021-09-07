@@ -1,6 +1,9 @@
 .coverage
+html/
 htmlcov/
 .idea
+.mutmut-cache
+mutmut.xml
 __pycache__
 .pytest_cache
 *.pyc
