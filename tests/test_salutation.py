@@ -1,4 +1,4 @@
-from module_name.salutation import hello
+from src.salutation import hello
 
 
 def test_hello_without_name() -> None:
