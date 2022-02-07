@@ -539,7 +539,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.
 
 [[package]]
 name = "pytest-randomly"
-version = "3.10.2"
+version = "3.10.3"
 description = "Pytest plugin to randomly order tests and control random.seed."
 category = "dev"
 optional = false
@@ -1023,8 +1023,8 @@ pytest = [
     {file = "pytest-7.0.0.tar.gz", hash = "sha256:dad48ffda394e5ad9aa3b7d7ddf339ed502e5e365b1350e0af65f4a602344b11"},
 ]
 pytest-randomly = [
-    {file = "pytest-randomly-3.10.2.tar.gz", hash = "sha256:2c0a332c4b124e372e2473803bcc91ec87797664f4955afef2b844c0021662b1"},
-    {file = "pytest_randomly-3.10.2-py3-none-any.whl", hash = "sha256:cbd5c50b7c41491c202c71a3df33a75619d610a4f5c34aa2bd02ac30fce7cd43"},
+    {file = "pytest-randomly-3.10.3.tar.gz", hash = "sha256:22154cdcff7ba44e0599596490e6b75278ca973a33812ea6a54bf14d0b042ef1"},
+    {file = "pytest_randomly-3.10.3-py3-none-any.whl", hash = "sha256:b05a7a45f54cae2b5095752c6a10cb559df84448421b0420ae492dd2fb1727ef"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
