@@ -50,7 +50,7 @@ jobs:
         run: |
           poetry run coverage html
       - name: Archive code coverage report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: code-coverage-report
           path: htmlcov
