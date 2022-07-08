@@ -1,6 +1,6 @@
 ![Python Template - Hello World Banner](https://raw.githubusercontent.com/linz/template-python-hello-world/master/docs/_static/banner.png)
 
-### _A minimal template for Python development_
+# A minimal template for Python development
 
 [![GitHub Actions Status](https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg)](https://github.com/linz/template-python-hello-world/actions)
 [![Alerts](https://badgen.net/lgtm/alerts/g/linz/template-python-hello-world?labelColor=2e3a44&label=Alerts&color=3dc64b)](https://lgtm.com/projects/g/linz/template-python-hello-world/context:python)
