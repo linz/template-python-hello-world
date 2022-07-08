@@ -41,21 +41,16 @@ jobs:
         run: python -m poetry install
       - name: Lint Last Commit
         if: github.event_name == 'push'
-        run: |
-          poetry run gitlint
+        run: poetry run gitlint
       - name: Lint All Commits on Pull Request
         if: github.event_name == 'pull_request'
-        run: |
-          poetry run gitlint --commits "origin/${{ github.base_ref }}...HEAD"
+        run: poetry run gitlint --commits "origin/${{ github.base_ref }}...HEAD"
       - name: Format
-        run: |
-          poetry run pre-commit run --all-files
+        run: poetry run pre-commit run --all-files
       - name: Test
-        run: |
-          poetry run coverage run --module pytest
+        run: poetry run coverage run --module pytest
       - name: Verify test coverage
-        run: |
-          poetry run coverage html
+        run: poetry run coverage html
       - name: Archive code coverage report
         uses: actions/upload-artifact@v3
         with:
