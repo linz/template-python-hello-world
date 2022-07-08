@@ -11,8 +11,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
-        python: [3.6, 3.7, 3.8, 3.9]
+        os:
+          - ubuntu-18.04
+          - ubuntu-20.04
+        python:
+          - 3.6
+          - 3.7
+          - 3.8
+          - 3.9
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
