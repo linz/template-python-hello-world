@@ -350,11 +350,11 @@ python-versions = "*"
 
 [[package]]
 name = "mutmut"
-version = "2.1.0"
+version = "2.4.0"
 description = "mutation testing for Python 3"
 category = "dev"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 
 [package.dependencies]
 click = "*"
@@ -362,6 +362,7 @@ glob2 = "*"
 junit-xml = "1.8"
 parso = "*"
 pony = "*"
+toml = "*"
 
 [package.extras]
 coverage = ["coverage"]
@@ -946,8 +947,7 @@ mccabe = [
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
 ]
 mutmut = [
-    {file = "mutmut-2.1.0-py2.py3-none-any.whl", hash = "sha256:d04542ed50a821dcc573077def189b06ffc9edc4f4ac6fa793a395a24b21ad8c"},
-    {file = "mutmut-2.1.0.tar.gz", hash = "sha256:91363f77c73e31a0d401ed1cc340905cec8f1f18c697ad078aef7abfcacf2314"},
+    {file = "mutmut-2.4.0.tar.gz", hash = "sha256:5ab05ffc04ed98c98d5da982a6d425875db5ca59cb7835ef55d1d694aea7d2f2"},
 ]
 mypy = [
     {file = "mypy-0.961-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:697540876638ce349b01b6786bc6094ccdaba88af446a9abb967293ce6eaa2b0"},
