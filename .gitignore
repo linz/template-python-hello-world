@@ -3,6 +3,7 @@
 /htmlcov/
 /.idea
 /.mutmut-cache
+/.mypy_cache
 /mutmut.xml
 *.pyc
 __pycache__
