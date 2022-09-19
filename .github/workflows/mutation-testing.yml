@@ -6,12 +6,12 @@ jobs:
   mutation-tests:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.0.2
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v4.2.0
         with:
           python-version: 3.9
-      - uses: actions/cache@v3
+      - uses: actions/cache@v3.0.8
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ secrets.CACHE_SEED }}-${{ env.PYTHON_VERSION }}-${{ hashFiles('./poetry.lock') }}
@@ -27,7 +27,7 @@ jobs:
         run: poetry run mutmut junitxml > mutmut.xml
         if: ${{ failure() }}
       - name: Archive mutation test report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: mutation-test-report
           path: mutmut.xml
