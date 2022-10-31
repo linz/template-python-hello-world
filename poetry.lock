@@ -345,7 +345,7 @@ python-versions = "*"
 
 [[package]]
 name = "mutmut"
-version = "2.4.1"
+version = "2.4.2"
 description = "mutation testing for Python 3"
 category = "dev"
 optional = false
@@ -962,7 +962,7 @@ mccabe = [
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
 ]
 mutmut = [
-    {file = "mutmut-2.4.1.tar.gz", hash = "sha256:a7c2fe0445711ade40b8ddfeb9c8f7d8b3a8e0c05bd58a4b746c1d627039356e"},
+    {file = "mutmut-2.4.2.tar.gz", hash = "sha256:fb79411983a55de9f0271c1a3fa31be85ae30f33ade1ab04630f4c7e2dee65a7"},
 ]
 mypy = [
     {file = "mypy-0.982-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:5085e6f442003fa915aeb0a46d4da58128da69325d8213b4b35cc7054090aed5"},
