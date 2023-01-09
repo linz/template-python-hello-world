@@ -165,9 +165,12 @@ This randomness can also be used to generate fuzzing input.
 
 ### Kodiak
 
-Kodiak is enabled on this repository, configured by `.kodiak.toml`.
+Kodiak is enabled on this repository, configured by `.kodiak.toml`. It is currently configured to do the following:
 
-Kodiak is a GitHub Bot that automatically merges pull requests that have been labelled `automerge :rocket:` once CI and required approvals have passed. Kodiak is free for open source repositories, but requires a per user subscription for private repositories.
+- Merge pull requests that have been labelled `automerge :rocket:` once the branch protection rules (under Settings → Branches) have all been satisfied.
+- Automatically approve and add the `automerge :rocket:` label to all pull requests by [Dependabot](#dependabot). **You should review the impact of this to your repository after forking** - see the `merge.automerge_dependencies` of the configuration. You might want to disable the auto-merging altogether, or to allow only minor and patch versions to merge automatically.
+
+Kodiak is free for open source repositories, but requires a per user subscription for private repositories.
 
 ## Automated Dependency Updates
 
