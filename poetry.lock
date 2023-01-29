@@ -465,14 +465,14 @@ six = "*"
 
 [[package]]
 name = "language-formatters-pre-commit-hooks"
-version = "2.5.0"
+version = "2.6.0"
 description = "List of pre-commit hooks meant to format your source code."
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "language_formatters_pre_commit_hooks-2.5.0-py2.py3-none-any.whl", hash = "sha256:7f4b4a84ea5818c79ca5bbafe1f218c3b720f8b8c28adf37196cab105bb63c0c"},
-    {file = "language_formatters_pre_commit_hooks-2.5.0.tar.gz", hash = "sha256:a74c28bc86aebb213802159e68a852ee15e48048e9140dcb64d5c9d7ab8083fe"},
+    {file = "language_formatters_pre_commit_hooks-2.6.0-py2.py3-none-any.whl", hash = "sha256:4c91f9692bca6f8af4c68f6598a0d57fc08906fdd8b8f3773756f8b2225bdb33"},
+    {file = "language_formatters_pre_commit_hooks-2.6.0.tar.gz", hash = "sha256:01c14d586f2780bf5dc940bbdeb44691e2b56ff72aa23004b1bed5474a695916"},
 ]
 
 [package.dependencies]
@@ -480,8 +480,7 @@ config-formatter = "*"
 packaging = "*"
 requests = "*"
 "ruamel.yaml" = "*"
-toml-sort = "*"
-tomlkit = "*"
+toml-sort = ">=0.22.0"
 
 [[package]]
 name = "lazy-object-proxy"
