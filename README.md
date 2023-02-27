@@ -191,6 +191,8 @@ LGTM is owned by GitHub and free for open source repositories. It can only be en
 
 ## Development
 
+### Ubuntu
+
 Prerequisites:
 
 - Python 3.7 through 3.11 (this can be changed in `.python-version` and `pyproject.toml`)
@@ -202,6 +204,16 @@ Optional dependencies:
 
 1. Install the project dependencies: `poetry install`
 2. Activate the virtualenv: `. .venv/bin/activate`
+
+### Nix
+
+Prerequisites:
+
+- Nix or NixOS
+
+Run `nix-shell` in the repository directory.
+
+### General
 
 Install Git hooks:
 
