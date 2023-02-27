@@ -213,6 +213,10 @@ Prerequisites:
 
 Run `nix-shell` in the repository directory.
 
+Optional dependencies:
+
+- [lorri](https://github.com/nix-community/lorri) can activate the Nix shell whenever you `cd` into this directory.
+
 ### General
 
 Install Git hooks:
