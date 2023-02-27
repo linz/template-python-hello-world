@@ -200,14 +200,13 @@ Optional dependencies:
 
 - [Pyenv](https://github.com/pyenv/pyenv) to use the reference Python version in `pyproject.toml` with a simple `pyenv install`
 
-Install the project dependencies:
+1. Install the project dependencies: `poetry install`
+2. Activate the virtualenv: `. .venv/bin/activate`
 
-```bash
-poetry install
-```
-
-Install commit-msg git hook. It runs on every local commit to check if the commit message conforms to the convention specified in `.gitlint`
+Install Git hooks:
 
 ```bash
 pre-commit install --hook-type=commit-msg --hook-type=pre-commit --overwrite
 ```
+
+They run on every commit to check the repository contents and commit message.
