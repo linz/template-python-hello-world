@@ -503,18 +503,18 @@ files = [
 
 [[package]]
 name = "mutmut"
-version = "2.4.3"
+version = "2.4.4"
 description = "mutation testing for Python 3"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mutmut-2.4.3.tar.gz", hash = "sha256:676c253ee4c87d4aa32e257827b3f6fdb4343925b29fa17aa3456ed9be5d93d4"},
+    {file = "mutmut-2.4.4.tar.gz", hash = "sha256:babd1ac579a817f94d5b944af70f1c5fee5ed117775be0a13c99b96b96841b23"},
 ]
 
 [package.dependencies]
 click = "*"
 glob2 = "*"
-junit-xml = "1.8"
+junit-xml = ">=1.8,<2"
 parso = "*"
 pony = "*"
 toml = "*"
