@@ -503,18 +503,18 @@ files = [
 
 [[package]]
 name = "mutmut"
-version = "2.4.3"
+version = "2.4.4"
 description = "mutation testing for Python 3"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mutmut-2.4.3.tar.gz", hash = "sha256:676c253ee4c87d4aa32e257827b3f6fdb4343925b29fa17aa3456ed9be5d93d4"},
+    {file = "mutmut-2.4.4.tar.gz", hash = "sha256:babd1ac579a817f94d5b944af70f1c5fee5ed117775be0a13c99b96b96841b23"},
 ]
 
 [package.dependencies]
 click = "*"
 glob2 = "*"
-junit-xml = "1.8"
+junit-xml = ">=1.8,<2"
 parso = "*"
 pony = "*"
 toml = "*"
@@ -725,13 +725,13 @@ testutil = ["gitpython (>3)"]
 
 [[package]]
 name = "pytest"
-version = "7.4.0"
+version = "7.4.2"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pytest-7.4.0-py3-none-any.whl", hash = "sha256:78bf16451a2eb8c7a2ea98e32dc119fd2aa758f1d5d66dbf0a59d69a3969df32"},
-    {file = "pytest-7.4.0.tar.gz", hash = "sha256:b4bf8c45bd59934ed84001ad51e11b4ee40d40a1229d2c79f9c592b0a3f6bd8a"},
+    {file = "pytest-7.4.2-py3-none-any.whl", hash = "sha256:1d881c6124e08ff0a1bb75ba3ec0bfd8b5354a01c194ddd5a0a870a48d99b002"},
+    {file = "pytest-7.4.2.tar.gz", hash = "sha256:a766259cfab564a2ad52cb1aae1b881a75c3eb7e34ca3779697c23ed47c47069"},
 ]
 
 [package.dependencies]

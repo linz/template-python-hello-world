@@ -22,7 +22,7 @@ jobs:
           - "3.11"
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v4.1.0
         with:
           fetch-depth: 0
       - name: Setup Python ${{ matrix.python }}
@@ -53,7 +53,7 @@ jobs:
       - name: Verify test coverage
         run: poetry run coverage html
       - name: Archive code coverage report
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: code-coverage-report
           path: htmlcov

@@ -6,7 +6,7 @@ jobs:
   mutation-tests:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v4.1.0
       - name: Setup Python
         uses: actions/setup-python@v4.7.0
         with:
@@ -27,7 +27,7 @@ jobs:
         run: poetry run mutmut junitxml > mutmut.xml
         if: ${{ failure() }}
       - name: Archive mutation test report
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: mutation-test-report
           path: mutmut.xml
