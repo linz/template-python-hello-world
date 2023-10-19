@@ -446,13 +446,13 @@ six = "*"
 
 [[package]]
 name = "language-formatters-pre-commit-hooks"
-version = "2.10.0"
+version = "2.11.0"
 description = "List of pre-commit hooks meant to format your source code."
 optional = false
 python-versions = "*"
 files = [
-    {file = "language_formatters_pre_commit_hooks-2.10.0-py2.py3-none-any.whl", hash = "sha256:e31de7a86ab5209762c1315d368fef5c782a11f2ead63c96f8db4263d9ba7b5e"},
-    {file = "language_formatters_pre_commit_hooks-2.10.0.tar.gz", hash = "sha256:10575324a33c154e7c350eb6c941084c088eb49abe958675ea14c1f0bc1811e2"},
+    {file = "language_formatters_pre_commit_hooks-2.11.0-py2.py3-none-any.whl", hash = "sha256:900f5e0468cb70cfeb03c385d6c0f69c50af55317ef4f629b54a9d3c9363608d"},
+    {file = "language_formatters_pre_commit_hooks-2.11.0.tar.gz", hash = "sha256:20b4bc90588d63830f486bed95f03e62f84a0e879d520067887bada542dd5848"},
 ]
 
 [package.dependencies]
@@ -460,6 +460,7 @@ config-formatter = "*"
 packaging = "*"
 requests = "*"
 "ruamel.yaml" = "*"
+setuptools = "*"
 toml-sort = ">=0.22.0"
 
 [[package]]
