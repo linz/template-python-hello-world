@@ -46,3 +46,9 @@ repos:
     hooks:
       - id: prettier
         stages: [commit]
+
+  - repo: https://github.com/rhysd/actionlint
+    rev: ea8102762106cdca9c88829f1295b39a544706f3 # frozen: v1.6.26
+    hooks:
+      - id: actionlint
+        stages: [commit]
