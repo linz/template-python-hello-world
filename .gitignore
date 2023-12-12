@@ -8,6 +8,7 @@
 *.pyc
 __pycache__
 /.pytest_cache
+/python
 Thumbs.db
 /.venv
 /.vscode
