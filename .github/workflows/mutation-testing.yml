@@ -22,7 +22,7 @@ jobs:
           python -m pip install poetry
           python -m poetry install
       - name: Run mutation tests
-        run: poetry run mutmut run --no-progress --runner="pytest --assert=plain"
+        run: poetry run mutmut run --no-progress --runner="pytest --assert=plain --exitfirst"
       - name: Create mutation test report
         run: poetry run mutmut junitxml > mutmut.xml
         if: ${{ failure() }}
