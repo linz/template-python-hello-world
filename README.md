@@ -175,7 +175,7 @@ Kodiak is a GitHub Bot that automatically merges pull requests that have been la
 
 Dependabot is enabled on this repository, configured by `.github/dependabot.yml`.
 
-Dependabot checks the dependencies listed in `requirements-dev.txt` daily to check if any new versions of those dependencies have been released. If Dependabot finds a new release, it opens a new Pull Request with a version bump, and attempts to show the changelog for that change. It also provides a compatibility prediction based on all of the Pull Requests that it has opened on other open source repositories and whether continous integration was successful.
+Dependabot checks the dependencies listed in `requirements-dev.txt` daily to check if any new versions of those dependencies have been released. If Dependabot finds a new release, it opens a new Pull Request with a version bump, and attempts to show the changelog for that change. It also provides a compatibility prediction based on all of the Pull Requests that it has opened on other open source repositories and whether continuous integration was successful.
 
 Dependabot is owned by GitHub and free for both open source and private repositories.
 
