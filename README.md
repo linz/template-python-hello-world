@@ -3,8 +3,6 @@
 # A minimal template for Python development
 
 [![GitHub Actions Status](https://github.com/linz/template-python-hello-world/workflows/Build/badge.svg)](https://github.com/linz/template-python-hello-world/actions)
-[![Alerts](https://badgen.net/lgtm/alerts/g/linz/template-python-hello-world?labelColor=2e3a44&label=Alerts&color=3dc64b)](https://lgtm.com/projects/g/linz/template-python-hello-world/context:python)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/linz/template-python-hello-world.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/linz/template-python-hello-world/context:python)
 [![Coverage: 100% branches](https://img.shields.io/badge/Coverage-100%25%20branches-brightgreen.svg)](https://pytest.org/)
 [![Kodiak](https://badgen.net/badge/Kodiak/enabled?labelColor=2e3a44&color=F39938)](https://kodiakhq.com/)
 [![Dependabot Status](https://badgen.net/badge/Dependabot/enabled?labelColor=2e3a44&color=blue)](https://github.com/linz/template-python-hello-world/network/updates)
@@ -175,19 +173,11 @@ Kodiak is a GitHub Bot that automatically merges pull requests that have been la
 
 Dependabot is enabled on this repository, configured by `.github/dependabot.yml`.
 
-Dependabot checks the dependencies listed in `requirements-dev.txt` daily to check if any new versions of those dependencies have been released. If Dependabot finds a new release, it opens a new Pull Request with a version bump, and attempts to show the changelog for that change. It also provides a compatibility prediction based on all of the Pull Requests that it has opened on other open source repositories and whether continous integration was successful.
+Dependabot checks the dependencies listed in `requirements-dev.txt` daily to check if any new versions of those dependencies have been released. If Dependabot finds a new release, it opens a new Pull Request with a version bump, and attempts to show the changelog for that change. It also provides a compatibility prediction based on all of the Pull Requests that it has opened on other open source repositories and whether continuous integration was successful.
 
 Dependabot is owned by GitHub and free for both open source and private repositories.
 
 ## Automated Vulnerability Checks
-
-### LGTM
-
-LGTM is enabled on this repository. There is no special configuration here, and enabling LGTM occurs at the GitHub organisation level.
-
-LGTM provides automated code review and security analysis.
-
-LGTM is owned by GitHub and free for open source repositories. It can only be enabled on private repositories by building your own instance of LGTM.
 
 ## Development
 
