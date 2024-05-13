@@ -568,12 +568,12 @@ files = [
 
 [[package]]
 name = "mutmut"
-version = "2.4.4"
+version = "2.5.0"
 description = "mutation testing for Python 3"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mutmut-2.4.4.tar.gz", hash = "sha256:babd1ac579a817f94d5b944af70f1c5fee5ed117775be0a13c99b96b96841b23"},
+    {file = "mutmut-2.5.0.tar.gz", hash = "sha256:0bb271d60047919db181bebc156b8b4a58013c39518b417cb9739ce693332981"},
 ]
 
 [package.dependencies]
