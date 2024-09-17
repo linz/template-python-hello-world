@@ -190,7 +190,7 @@ Optional dependencies:
 
 - [Pyenv](https://github.com/pyenv/pyenv) to use the reference Python version in `pyproject.toml` with a simple `pyenv install`
 
-1. Install the project dependencies: `poetry install`
+1. Install the project dependencies: `poetry install --no-root`
 2. Activate the virtualenv: `poetry shell`
 
 Install Git hooks:

@@ -21,7 +21,7 @@ jobs:
       - name: Install Poetry
         run: pip install poetry
       - name: Install Python dependencies
-        run: poetry install
+        run: poetry install --no-root
       - name: Run mutation tests
         run: poetry run mutmut run --no-progress --runner="pytest --assert=plain --exitfirst"
       - name: Create mutation test report

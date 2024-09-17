@@ -39,7 +39,7 @@ jobs:
       - name: Install Poetry
         run: pip install poetry
       - name: Install Python dependencies
-        run: poetry install
+        run: poetry install --no-root
       - name: Lint Last Commit
         if: github.event_name == 'push'
         run: poetry run gitlint
