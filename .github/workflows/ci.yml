@@ -53,7 +53,7 @@ jobs:
       - name: Verify test coverage
         run: poetry run coverage html
       - name: Archive code coverage report
-        uses: actions/upload-artifact@604373da6381bf24206979c74d06a550515601b9 # v4.4.1
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
         with:
           name: code-coverage-report
           path: htmlcov

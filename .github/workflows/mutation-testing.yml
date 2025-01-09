@@ -28,7 +28,7 @@ jobs:
         run: poetry run mutmut junitxml > mutmut.xml
         if: ${{ failure() }}
       - name: Archive mutation test report
-        uses: actions/upload-artifact@604373da6381bf24206979c74d06a550515601b9 # v4.4.1
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
         with:
           name: mutation-test-report
           path: mutmut.xml
